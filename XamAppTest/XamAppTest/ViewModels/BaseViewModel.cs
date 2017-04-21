@@ -6,6 +6,7 @@ using Xamarin.Forms;
 
 namespace XamAppTest.ViewModels
 {
+    //ObservableObject is from 
     public class BaseViewModel : ObservableObject
     {
         /// <summary>
