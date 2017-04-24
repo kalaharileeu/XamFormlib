@@ -5,8 +5,8 @@
              xmlns:vm="clr-namespace:XamAppTest.ViewModels;"
              Title="{Binding Title}">
   <ContentPage.BindingContext>
-    <vm:AboutViewModel />
-  </ContentPage.BindingContext>
+        <vm:AboutViewModel /><!--Cornel:vm is probaly ViewModel-->
+    </ContentPage.BindingContext>
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto"/>
@@ -21,9 +21,15 @@
     </StackLayout>
     <ScrollView Grid.Row="1">
       <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
-        <Label TextColor="Black"  FontSize = "20" Text="This is a label." />
+        <Label TextColor="Black"  FontSize = "20" Text="C++ SDL2 Xplotform with Visual Studio 2015." />
         <Button Margin="0,10,0,0" Text="Learn more" Command="{Binding OpenWebCommand}" BackgroundColor="{StaticResource Primary}" TextColor="White"/>
-      </StackLayout>
+        <!--Entry below binds to ViewModel:AboutViewModel Websute string property-->
+          <!--Binding to public properties not class data members-->
+                <Entry Text="{Binding DisplayMessage}" Placeholder="This is placeholder text"/>
+                <Entry Text="{Binding Website}"/>
+                <!--The switch below binds to boolean-->
+                <Switch IsToggled="{Binding Continuenow}" />
+     </StackLayout>
     </ScrollView>
   </Grid>
 </ContentPage>

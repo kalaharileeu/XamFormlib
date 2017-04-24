@@ -40,6 +40,8 @@ namespace XamAppTest.Helpers
 
         /// <summary>
         /// Raises the property changed event.
+        /// Cornel here: {CallerMemberName] is part of the box of trick
+        /// for easier two way binding
         /// </summary>
         /// <param name="propertyName">Property name.</param>
         protected void OnPropertyChanged([CallerMemberName]string propertyName = "")
